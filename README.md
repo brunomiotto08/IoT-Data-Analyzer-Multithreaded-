@@ -233,3 +233,4 @@ device_B;2024-03;humidity;98.20;85.30;75.40
 
 ## Autors
   - [@brunomiotto08](https://github.com/brunomiotto08/)
+  - [@vitorsassi](https://github.com/vitorsassi/)
