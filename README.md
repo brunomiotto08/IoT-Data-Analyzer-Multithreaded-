@@ -72,7 +72,7 @@ typedef struct {
 } SensorRecord;
 ```
 
-### Thread Distribution
+## Thread Distribution
 
 **Parallel Processing Strategy**
 - Static Partitioning:
@@ -97,17 +97,17 @@ typedef struct {
   - Each thread exclusively processes its assigned block
  
 
-### Thread Data Processing
+## Thread Data Processing
 **Per-Thread Execution Flow**
 Each thread performs these operations on its records:
 
-#### **Metadata Extraction:**
+### **Metadata Extraction:**
 
 ```bash
 parse_date(record->date, &year, &month);
 ```
 
-#### **Statistical Analysis:**
+### **Statistical Analysis:**
 
 ```bash
 
@@ -124,14 +124,14 @@ stats->sum[sensor_idx] += val;
 stats->count[sensor_idx]++;
 ```
 
-#### **Synchronization:**
+### **Synchronization:**
 
 ```bash    
 pthread_mutex_lock(&mutex);
 // Critical section: shared stats update
 pthread_mutex_unlock(&mutex);
 ```
-##### Thread Synchronization
+#### Thread Synchronization
 - Mutex-protected operations:
   - Finding/adding monthly stats entries
   - Updating result counters
@@ -142,7 +142,7 @@ pthread_mutex_unlock(&mutex);
 
 
 
-### Concurrency Considerations
+## Concurrency Considerations
 #### Potential Issues
 
 - Race Conditions:
@@ -162,7 +162,7 @@ pthread_mutex_unlock(&mutex);
   - Output generation is serialized
   
 
-### Data Analysis
+## Data Analysis
 Each thread processes its assigned records and updates shared statistics stored in MonthlyStats structures:
 
 ```bash
@@ -177,7 +177,7 @@ typedef struct {
 ```
 
 
-### Output Generation
+## Output Generation
 
 - The program generates a CSV file with the following format:
 
@@ -193,7 +193,7 @@ device_A;2024-03;temperature;28.50;24.75;21.00
 device_B;2024-03;humidity;98.20;85.30;75.40
 ```
 
-### Thread Execution Mode
+## Thread Execution Mode
 #### Kernel Interaction
   - User-Level Threads: Managed by pthread library
   - Kernel Awareness: Scheduled by OS kernel
@@ -231,4 +231,6 @@ device_B;2024-03;humidity;98.20;85.30;75.40
   - Memory bandwidth may become bottleneck with many cores
   - Disk I/O is single-threaded during initial load
 
-
+## Autors
+  - @brunomiotto08
+  - @vitor
