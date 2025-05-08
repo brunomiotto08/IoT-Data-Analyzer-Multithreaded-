@@ -10,4 +10,6 @@ A multithreaded C program to process CSV files containing sensor data from multi
   ```bash
   gcc -o programaT main.c -lpthread
 
-./programaT.exe
+- **Execute**: 
+  ```bash
+  ./programaT.exe
