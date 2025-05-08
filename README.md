@@ -232,5 +232,4 @@ device_B;2024-03;humidity;98.20;85.30;75.40
   - Disk I/O is single-threaded during initial load
 
 ## Autors
-  - @brunomiotto08
-  - @vitor
+  - [@brunomiotto08](https://github.com/brunomiotto08/)
